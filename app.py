@@ -10,7 +10,7 @@ class ShopHandler(BaseHTTPRequestHandler):
             body = self.rfile.read(content_length)
 
             cart_items = json.loads(body)
-            total = calculate_total(cart_items)
+            total += calculate_total(cart_items)
 
             response = {
                 "total": total
